@@ -27,6 +27,8 @@ jobs:
       run: |
             cd build-scripts
             python amalgamation.py
+            cl sqlite3.c -link -dll -out:sqlite3.dll
+            cd ..
 
     - name: Build
       run: python setup.py sdist bdist_wheel
